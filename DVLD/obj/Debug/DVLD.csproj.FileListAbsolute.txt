@@ -1,0 +1,10 @@
+C:\Users\rayan\source\repos\DVLD\bin\Debug\DVLD.exe.config
+C:\Users\rayan\source\repos\DVLD\bin\Debug\DVLD.exe
+C:\Users\rayan\source\repos\DVLD\bin\Debug\DVLD.pdb
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.csproj.AssemblyReference.cache
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.Properties.Resources.resources
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.csproj.GenerateResource.cache
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.csproj.CoreCompileInputs.cache
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.exe
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.pdb
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.FrmMain.resources
