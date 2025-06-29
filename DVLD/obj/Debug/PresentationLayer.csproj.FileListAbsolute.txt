@@ -37,3 +37,4 @@ C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.FrmManageLocalDrivingLicenseAppl
 C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.ctrShowLocalDrivingLicenseApplicationInfo.resources
 C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.FrmTestAppointments.resources
 C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.FrmScheduleTests.resources
+C:\Users\rayan\source\repos\DVLD\obj\Debug\DVLD.FrmTakeTest.resources

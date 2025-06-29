@@ -106,8 +106,9 @@ namespace DataAccessLayer
                     AppointmentDate = (DateTime)reader["AppointmentDate"];
                     PaidFees = (decimal)reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
-                    IsLocked = Convert.ToBoolean(reader["IsActive"]);
-                    RetakeTestApplicationID = reader["RetakeTestApplicationID"] == DBNull.Value ? -1 : (int)reader["RetakeTestApplicationID"]; 
+                    IsLocked = Convert.ToBoolean(reader["IsLocked"]);
+                    RetakeTestApplicationID = reader["RetakeTestApplicationID"] == DBNull.Value ? -1 : (int)reader["RetakeTestApplicationID"];
+                     Found = true;
                 }
 
                 reader.Close();

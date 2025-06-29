@@ -138,5 +138,35 @@ namespace DVLD
         {
 
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dgvAppointments.SelectedRows.Count < 1)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestAppointment Appointment = GetTestAppointmentOfSelectedDGVrow();
+            if(Appointment == null)
+            {
+                MessageBox.Show("ERROR: Could not find test appointment");
+                return;
+            }
+            
+            Form Frm = new FrmTakeTest(GetTestAppointmentOfSelectedDGVrow());
+            Frm.ShowDialog();
+        }
+
+        private TestAppointment GetTestAppointmentOfSelectedDGVrow()
+        {
+            DataGridViewRow SelectedRow = dgvAppointments.SelectedRows[0];
+            int TestAptID = Convert.ToInt32(SelectedRow.Cells["Appointment ID"].Value);
+            return TestAppointment.GetAppointmentByID(TestAptID);
+        }
+
     }
+
 }
