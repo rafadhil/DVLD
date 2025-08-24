@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using DVLD.ApplicationsForms;
+using DVLD.ApplicationsForms.UserControls;
+using DVLD.Drivers;
+using DVLD.Licenses;
 namespace DVLD
 {
     public partial class FrmMain : Form
@@ -115,6 +119,54 @@ namespace DVLD
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmManageDrivers();
+            frm.ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmAddNewInternationalLicenseApplication();
+            Frm.ShowDialog();
+        }
+
+        private void internationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmShowInternationalLicenseApplications();
+            Frm.ShowDialog();
+        }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmRenewLocalDrivingLicense();
+            Frm.ShowDialog();
+        }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmReplaceLocalDrivingLicense();
+            Frm.ShowDialog();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmDetainLicense();
+            Frm.ShowDialog();
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmReleaseDetainedLicense();
+            Frm.ShowDialog();
+        }
+
+        private void detainALicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Frm = new FrmManageDetainedLicenses();
+            Frm.ShowDialog();
         }
     }
 }

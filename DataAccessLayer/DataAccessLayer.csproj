@@ -41,17 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationData.cs" />
-    <Compile Include="ApplicationTypeData.cs" />
+    <Compile Include="Applications\ApplicationData.cs" />
+    <Compile Include="Applications\ApplicationTypeData.cs" />
     <Compile Include="CountryData.cs" />
     <Compile Include="DataLayerSettings.cs" />
-    <Compile Include="LicenseClassData.cs" />
-    <Compile Include="LocalDrivingLicenseApplicationData.cs" />
+    <Compile Include="DriverData.cs" />
+    <Compile Include="Licenses\DetainedLicenseData.cs" />
+    <Compile Include="Licenses\InternationalLicenseData.cs" />
+    <Compile Include="Licenses\LicenseClassData.cs" />
+    <Compile Include="Licenses\LicenseData.cs" />
+    <Compile Include="Applications\LocalDrivingLicenseApplicationData.cs" />
     <Compile Include="PersonData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestAppointmentData.cs" />
-    <Compile Include="TestData.cs" />
-    <Compile Include="TestTypeData.cs" />
+    <Compile Include="Tests\TestAppointmentData.cs" />
+    <Compile Include="Tests\TestData.cs" />
+    <Compile Include="Tests\TestTypeData.cs" />
     <Compile Include="UserData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
