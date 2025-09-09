@@ -94,6 +94,7 @@
             this.Controls.Add(this.ctrShowLicense1);
             this.Name = "ctrFindLicense";
             this.Size = new System.Drawing.Size(804, 413);
+            this.Load += new System.EventHandler(this.ctrFindLicense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

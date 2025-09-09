@@ -54,7 +54,8 @@ namespace BusinessLayer
 
         public static Driver GetDriverByDriverID(int DriverID)
         {
-            int PersonID = -1, CreatedByUserID = -1;
+            int PersonID = -1;
+            int CreatedByUserID = -1;
             DateTime CreationDate = DateTime.MinValue;
 
             if (DriverData.GetDriverByDriverID(DriverID, ref PersonID, ref CreatedByUserID, ref CreationDate))

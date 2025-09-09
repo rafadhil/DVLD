@@ -28,7 +28,16 @@ namespace DVLD.Licenses.UserControls
             InitializeComponent();
         }
 
+        public void LoadLicense(BusinessLayer.License license)
+        {
+            ActiveLicense = license;
+            ctrShowLicense1.LoadInfo(ActiveLicense);
 
+            if (OnLicenseSelected != null)
+            {
+                OnLicenseSelected(ActiveLicense);
+            }
+        }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -96,6 +105,11 @@ namespace DVLD.Licenses.UserControls
         }
 
         private void ctrShowLicense1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrFindLicense_Load(object sender, EventArgs e)
         {
 
         }

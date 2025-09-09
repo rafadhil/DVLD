@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rayan\\source\\repos\\DVLD\\",
+  "WorkspaceRootPath": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|c:\\users\\rayan\\source\\repos\\dvld\\licenses\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|solutionrelative:licenses\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|C:\\Users\\rayan\\source\\repos\\DVLD\\licenses\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|solutionrelative:licenses\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|c:\\users\\rayan\\desktop\\dvld_stuff\\dvld\\dvld\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmManageDetainedLicenses.cs",
-              "DocumentMoniker": "C:\\Users\\rayan\\source\\repos\\DVLD\\Licenses\\FrmManageDetainedLicenses.cs",
-              "RelativeDocumentMoniker": "Licenses\\FrmManageDetainedLicenses.cs",
-              "ToolTip": "C:\\Users\\rayan\\source\\repos\\DVLD\\Licenses\\FrmManageDetainedLicenses.cs",
-              "RelativeToolTip": "Licenses\\FrmManageDetainedLicenses.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA4wBQAAAAHAAAA",
+              "Title": "FrmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\FrmMain.cs",
+              "RelativeDocumentMoniker": "FrmMain.cs",
+              "ToolTip": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\FrmMain.cs [Design]",
+              "RelativeToolTip": "FrmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T01:31:17.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmManageDetainedLicenses.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\rayan\\source\\repos\\DVLD\\Licenses\\FrmManageDetainedLicenses.cs",
-              "RelativeDocumentMoniker": "Licenses\\FrmManageDetainedLicenses.cs",
-              "ToolTip": "C:\\Users\\rayan\\source\\repos\\DVLD\\Licenses\\FrmManageDetainedLicenses.cs [Design]",
-              "RelativeToolTip": "Licenses\\FrmManageDetainedLicenses.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T01:27:35.288Z"
+              "WhenOpened": "2025-09-08T21:51:42.956Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -82,7 +82,10 @@ namespace DVLD
             
             if(cbFilterBy.SelectedItem.ToString() == "Person ID")
             {
-                ActivePerson = Person.GetPersonByID(Convert.ToInt32(txtSearch.Text));
+                if (int.TryParse(txtSearch.Text, out int personId))
+                {
+                    ActivePerson = Person.GetPersonByID(personId);
+                }
             }
             else
             {
@@ -135,6 +138,11 @@ namespace DVLD
             {
                 OnPersonSelected(ActivePerson.PersonID);
             }
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

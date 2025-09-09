@@ -37,9 +37,10 @@ namespace BusinessLayer.Licenses
             CreatedByUser = createdByUser;
         }
 
-        public static DataTable GetAllLicensesForDriver(Driver DriverInfo)
+        public static DataTable GetAllLicensesForDriver(int DriverID)
         {
-            return InternationalLicenseData.GetAllLicensesForDriver(DriverInfo.DriverID);
+                return InternationalLicenseData.GetAllLicensesForDriver(DriverID);
+ 
         }
 
         public static DataTable GetAllLicenses()

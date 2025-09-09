@@ -70,6 +70,32 @@ namespace BusinessLayer.Licenses
         {
             return DetainedLicenseData.GetAllRecords();
         }
+        public static DataTable GetAllRecordsByDetainIDLike(String DetainID)
+        {
+            return DetainedLicenseData.GetAllRecordsByDetainIDLike(DetainID);
+        }
+        public static DataTable GetAllRecordsByFullNameLike(String FullName)
+        {
+            return DetainedLicenseData.GetAllRecordsByFullNameLike(FullName);
+        }
+        public static DataTable GetAllRecordsByNationalNumberLike(String NationalNumber)
+        {
+            return DetainedLicenseData.GetAllRecordsByNationalNumberLike(NationalNumber);
+        }
+        public static DataTable GetAllUnreleasedRecords()
+        {
+            return DetainedLicenseData.GetAllUnreleasedRecords();
+        }
+        public static DataTable GetAllReleasedRecords()
+        {
+            return DetainedLicenseData.GetAllReleasedRecords();
+        }
+
+        public static DataTable GetAllReleasedRecordsByReleaseApplicationIDLike(String ReleaseApplicationID)
+        {
+            return DetainedLicenseData.GetAllReleasedRecordsByReleaseApplicationIDLike(ReleaseApplicationID);
+        }
+
         public static DetainedLicense GetDetentionInfoForDetainedLicense(License DetainedLicense)
         {
             int DetainID = -1, CreatedByUserID = -1;

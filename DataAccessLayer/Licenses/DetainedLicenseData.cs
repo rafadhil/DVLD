@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -130,7 +131,7 @@ namespace DataAccessLayer.Licenses
 	                        IsReleased as [Is Released],
 	                        FineFees as [Fine Fees],
 	                        ReleaseDate as [Release Date],
-	                        NationalNo as [Nat.No],
+	                        NationalNo as [Nat.No.],
 	                        [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
 	                        ReleaseApplicationID as [Release App.ID]
                         FROM DetainedLicenses DL
@@ -160,5 +161,257 @@ namespace DataAccessLayer.Licenses
             }
             return DT;
         }
-}
+
+        public static DataTable GetAllRecordsByDetainIDLike(String DetainID)
+        {
+            string query = @"SELECT 
+	                            DetainID as [D.ID],
+	                            DL.LicenseID as [L.ID],
+	                            DetainDate as [D.Date],
+	                            IsReleased as [Is Released],
+	                            FineFees as [Fine Fees],
+	                            ReleaseDate as [Release Date],
+	                            NationalNo as [Nat.No.],
+	                            [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                            ReleaseApplicationID as [Release App.ID]
+                            FROM DetainedLicenses DL
+                            JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                            JOIN Drivers D on L.DriverID = D.DriverID
+                            JOIN People P ON D.PersonID = P.PersonID
+                        WHERE DetainID LIKE @DetainID ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+            command.Parameters.AddWithValue("@DetainID", DetainID + "%");
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+        public static DataTable GetAllRecordsByNationalNumberLike(String NationalNo)
+        {
+            string query = @"SELECT 
+	                            DetainID as [D.ID],
+	                            DL.LicenseID as [L.ID],
+	                            DetainDate as [D.Date],
+	                            IsReleased as [Is Released],
+	                            FineFees as [Fine Fees],
+	                            ReleaseDate as [Release Date],
+	                            NationalNo as [Nat.No.],
+	                            [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                            ReleaseApplicationID as [Release App.ID]
+                            FROM DetainedLicenses DL
+                            JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                            JOIN Drivers D on L.DriverID = D.DriverID
+                            JOIN People P ON D.PersonID = P.PersonID
+                        WHERE NationalNo LIKE @NationalNo ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+            command.Parameters.AddWithValue("@NationalNo", NationalNo + "%");
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+
+        public static DataTable GetAllRecordsByFullNameLike(String FullName)
+        {
+            string query = @"SELECT * FROM
+                                (SELECT 
+	                                    DetainID as [D.ID],
+	                                    DL.LicenseID as [L.ID],
+	                                    DetainDate as [D.Date],
+	                                    IsReleased as [Is Released],
+	                                    FineFees as [Fine Fees],
+	                                    ReleaseDate as [Release Date],
+	                                    NationalNo as [Nat.No.],
+	                                    [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                                    ReleaseApplicationID as [Release App.ID]
+                                    FROM DetainedLicenses DL
+                                    JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                                    JOIN Drivers D on L.DriverID = D.DriverID
+                                    JOIN People P ON D.PersonID = P.PersonID) R1
+                                WHERE [Full Name] LIKE @FullName ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+            command.Parameters.AddWithValue("@FullName", FullName + "%");
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+        public static DataTable GetAllReleasedRecords()
+        {
+            string query = @"SELECT 
+	                            DetainID as [D.ID],
+	                            DL.LicenseID as [L.ID],
+	                            DetainDate as [D.Date],
+	                            IsReleased as [Is Released],
+	                            FineFees as [Fine Fees],
+	                            ReleaseDate as [Release Date],
+	                            NationalNo as [Nat.No.],
+	                            [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                            ReleaseApplicationID as [Release App.ID]
+                            FROM DetainedLicenses DL
+                            JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                            JOIN Drivers D on L.DriverID = D.DriverID
+                            JOIN People P ON D.PersonID = P.PersonID
+                        WHERE IsReleased = 1 ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+        public static DataTable GetAllUnreleasedRecords()
+        {
+            string query = @"SELECT 
+	                            DetainID as [D.ID],
+	                            DL.LicenseID as [L.ID],
+	                            DetainDate as [D.Date],
+	                            IsReleased as [Is Released],
+	                            FineFees as [Fine Fees],
+	                            ReleaseDate as [Release Date],
+	                            NationalNo as [Nat.No.],
+	                            [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                            ReleaseApplicationID as [Release App.ID]
+                            FROM DetainedLicenses DL
+                            JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                            JOIN Drivers D on L.DriverID = D.DriverID
+                            JOIN People P ON D.PersonID = P.PersonID
+                        WHERE IsReleased = 0 ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+
+        public static DataTable GetAllReleasedRecordsByReleaseApplicationIDLike(String ReleaseApplicationID)
+        {
+            string query = @"SELECT 
+	                            DetainID as [D.ID],
+	                            DL.LicenseID as [L.ID],
+	                            DetainDate as [D.Date],
+	                            IsReleased as [Is Released],
+	                            FineFees as [Fine Fees],
+	                            ReleaseDate as [Release Date],
+	                            NationalNo as [Nat.No.],
+	                            [Full Name] = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,
+	                            ReleaseApplicationID as [Release App.ID]
+                            FROM DetainedLicenses DL
+                            JOIN Licenses L ON DL.LicenseID = L.LicenseID
+                            JOIN Drivers D on L.DriverID = D.DriverID
+                            JOIN People P ON D.PersonID = P.PersonID
+                        WHERE ReleaseApplicationID LIKE @ReleaseApplicationID ;";
+
+            SqlConnection connection = new SqlConnection(DataLayerSettings.connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable DT = new DataTable();
+            command.Parameters.AddWithValue("@ReleaseApplicationID", ReleaseApplicationID + "%");
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DT.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+    }
 }

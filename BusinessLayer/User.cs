@@ -74,7 +74,7 @@ namespace BusinessLayer
 
         }
 
-        public static DataTable GetUsersByUserIDLike(int UserID)
+        public static DataTable GetUsersByUserIDLike(String UserID)
         {
             return UserData.GetUsersByUserIDLike(UserID);
 

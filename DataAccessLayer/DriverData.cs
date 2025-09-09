@@ -244,7 +244,7 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    PersonID = Convert.ToInt32(reader["PersonID"]);
+                    PersonID = (int)reader["PersonID"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     CreationDate = Convert.ToDateTime(reader["CreatedDate"]);
                     Found = true;

@@ -12,7 +12,7 @@ namespace DataAccessLayer
     public static class UserData
     {
 
-        public static DataTable GetUsersByUserIDLike(int UserID)
+        public static DataTable GetUsersByUserIDLike(String UserID)
         {
 
             DataTable DT = new DataTable();
@@ -202,7 +202,7 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    PersonID = Convert.ToInt32(reader["PersonID"]);
+                    PersonID = (int)reader["PersonID"];
                     UserName = (String)reader["UserName"];
                     IsActive = Convert.ToBoolean(reader["IsActive"]);
                     Found = true;

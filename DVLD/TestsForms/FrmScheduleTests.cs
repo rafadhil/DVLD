@@ -15,7 +15,7 @@ namespace DVLD
 {
     public partial class FrmScheduleTests : Form
     {
-        enum enFormMode {AddNew, Update }
+        enum enFormMode {AddNew, Update}
 
         LocalDrivingLicenseApplication ActiveApplication;
         TestAppointment ActiveAppointment;

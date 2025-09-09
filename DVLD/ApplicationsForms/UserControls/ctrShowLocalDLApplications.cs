@@ -253,8 +253,6 @@ namespace DVLD
 
         private void SetContextMenuItemsForCompletedApplication()
         {
-            showApplicationDetailsToolStripMenuItem.Enabled = true;
-            editApplicationToolStripMenuItem.Enabled = false;
             deleteApplicatoinToolStripMenuItem.Enabled = false;
             cancelApplicationToolStripMenuItem.Enabled = false;
             issueDrvingLicenseFirstTimeToolStripMenuItem.Enabled = false;
@@ -265,8 +263,6 @@ namespace DVLD
 
         private void SetContextMenuItemsForCancelledApplication()
         {
-            showApplicationDetailsToolStripMenuItem.Enabled = true;
-            editApplicationToolStripMenuItem.Enabled = false;
             deleteApplicatoinToolStripMenuItem.Enabled = true;
             cancelApplicationToolStripMenuItem.Enabled = false;
             issueDrvingLicenseFirstTimeToolStripMenuItem.Enabled = false;
@@ -277,8 +273,6 @@ namespace DVLD
 
         private void SetContextMenuItemsForNewApplication()
         {
-            showApplicationDetailsToolStripMenuItem.Enabled = true;
-            editApplicationToolStripMenuItem.Enabled = true;
             deleteApplicatoinToolStripMenuItem.Enabled = true;
             cancelApplicationToolStripMenuItem.Enabled = true;
             issueDrvingLicenseFirstTimeToolStripMenuItem.Enabled = GetNumberOfPassedTestsForSelectedRow() == 3;

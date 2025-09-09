@@ -56,7 +56,7 @@
             // 
             this.lblNumberOfRecords.AutoSize = true;
             this.lblNumberOfRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumberOfRecords.Location = new System.Drawing.Point(105, 526);
+            this.lblNumberOfRecords.Location = new System.Drawing.Point(102, 452);
             this.lblNumberOfRecords.Name = "lblNumberOfRecords";
             this.lblNumberOfRecords.Size = new System.Drawing.Size(18, 20);
             this.lblNumberOfRecords.TabIndex = 15;
@@ -122,12 +122,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(191, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(191, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(179, 6);
             // 
             // cmsDGV
             // 
@@ -143,14 +143,14 @@
             this.inProgressToolStripMenuItem,
             this.emailPersonToolStripMenuItem});
             this.cmsDGV.Name = "contextMenuStrip1";
-            this.cmsDGV.Size = new System.Drawing.Size(195, 290);
+            this.cmsDGV.Size = new System.Drawing.Size(183, 268);
             this.cmsDGV.Opening += new System.ComponentModel.CancelEventHandler(this.cmsDGV_Opening);
             // 
             // addPersonToolStripMenuItem
             // 
             this.addPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.user;
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
-            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.addPersonToolStripMenuItem.Text = "Add New User";
             this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
@@ -158,7 +158,7 @@
             // 
             this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.visual;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
@@ -166,7 +166,7 @@
             // 
             this.updateToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit;
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.updateToolStripMenuItem.Text = "Edit User";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
@@ -174,7 +174,7 @@
             // 
             this.toolStripMenuItem1.Image = global::DVLD.Properties.Resources.changePassword;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(182, 36);
             this.toolStripMenuItem1.Text = "Change Password";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -182,7 +182,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.delete;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.deleteToolStripMenuItem.Text = "Delete User";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -190,7 +190,7 @@
             // 
             this.inProgressToolStripMenuItem.Image = global::DVLD.Properties.Resources.mobile;
             this.inProgressToolStripMenuItem.Name = "inProgressToolStripMenuItem";
-            this.inProgressToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.inProgressToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.inProgressToolStripMenuItem.Text = "Call User";
             this.inProgressToolStripMenuItem.Click += new System.EventHandler(this.inProgressToolStripMenuItem_Click);
             // 
@@ -198,7 +198,7 @@
             // 
             this.emailPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.send_email;
             this.emailPersonToolStripMenuItem.Name = "emailPersonToolStripMenuItem";
-            this.emailPersonToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.emailPersonToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.emailPersonToolStripMenuItem.Text = "Email User";
             this.emailPersonToolStripMenuItem.Click += new System.EventHandler(this.emailPersonToolStripMenuItem_Click);
             // 
@@ -206,7 +206,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 526);
+            this.label2.Location = new System.Drawing.Point(19, 452);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 14;
@@ -223,7 +223,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(673, 449);
+            this.dgvUsers.Size = new System.Drawing.Size(673, 369);
             this.dgvUsers.TabIndex = 8;
             // 
             // ctrShowUsers
@@ -238,7 +238,7 @@
             this.Controls.Add(this.cbActivityStatus);
             this.Controls.Add(this.txtSearch);
             this.Name = "ctrShowUsers";
-            this.Size = new System.Drawing.Size(737, 563);
+            this.Size = new System.Drawing.Size(737, 490);
             this.Load += new System.EventHandler(this.ctrShowUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.cmsDGV.ResumeLayout(false);

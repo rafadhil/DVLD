@@ -36,7 +36,9 @@ namespace DVLD.Licenses.UserControls
         private void LoadDGV()
         {
             dgvLocalLicenses.DataSource = BusinessLayer.License.GetAllLicensesForPerson(ActivePerson.PersonID);
-            dgvInternationalLicenses.DataSource = InternationalLicense.GetAllLicensesForDriver(Driver.GetDriverByPersonID(ActivePerson.PersonID));
+            Driver Driver = Driver.GetDriverByPersonID(ActivePerson.PersonID);
+            int DriverID = Driver == null ? -1 : Driver.DriverID;
+            dgvInternationalLicenses.DataSource = InternationalLicense.GetAllLicensesForDriver(DriverID);
         }
 
         private void SetRecordsCount()

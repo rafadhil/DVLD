@@ -21,6 +21,19 @@ namespace DVLD.Licenses
             InitializeComponent();
         }
 
+        public FrmReleaseDetainedLicense(BusinessLayer.License DetainedLicense)
+        {
+            InitializeComponent();
+            if(DetainedLicense == null)
+            {
+                MessageBox.Show("ERROR: Could not find detained license, closing the form");
+                this.Close();
+                return;
+            }
+
+            ActiveLicense = DetainedLicense;
+        }
+
         private void ctrFindLicense1_OnLicenseSelected(BusinessLayer.License obj)
         {
             lblShowLicensesHistory.Enabled = false;
@@ -71,7 +84,11 @@ namespace DVLD.Licenses
             lblApplicationFees.Text = ApplicationType.GetApplicationTypeByID(
                (int)Common.enApplicationType.ReleaseDetainedLicense).TypeFees.ToString();
 
-
+            if (ActiveLicense != null)
+            {
+                ctrFindLicense1.LoadLicense(ActiveLicense);
+                ctrFindLicense1.DisableSearch();
+            }
         }
 
         private void btnRelease_Click(object sender, EventArgs e)

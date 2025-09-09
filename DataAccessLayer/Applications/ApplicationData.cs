@@ -147,7 +147,7 @@ namespace DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    ApplicantID = Convert.ToInt32(reader["ApplicantPersonID"]);
+                    ApplicantID = (int)reader["ApplicantPersonID"];
                     ApplicationDate = (DateTime)reader["ApplicationDate"];
                     ApplicationTypeID = Convert.ToInt32(reader["ApplicationTypeID"]);
                     ApplicationStatus = Convert.ToByte(reader["ApplicationStatus"]);

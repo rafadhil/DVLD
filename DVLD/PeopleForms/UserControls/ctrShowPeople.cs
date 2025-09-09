@@ -94,46 +94,46 @@ namespace DVLD
             switch (cbFilterBy.Text.ToString())
             {
                 case "Person ID":
-                    dgvPersons.DataSource = Person.GetPersonsByPersonIDLike(Convert.ToInt32(txtSearch.Text));
-                    SetNumberOfRecordsInDGV();
+                    if (int.TryParse(txtSearch.Text, out int personId))
+                    {
+                        dgvPersons.DataSource = Person.GetPersonsByPersonIDLike(personId);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtSearch, "Please enter a valid number for Person ID");
+                        return;
+                    }
                     break;
 
                 case "National Number":
                     dgvPersons.DataSource = Person.GetPersonsByNationalNumberLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "First Name":
                     dgvPersons.DataSource = Person.GetPersonsByFirstNameLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Second Name":
                     dgvPersons.DataSource = Person.GetPersonsBySecondNameLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Third Name":
                     dgvPersons.DataSource = Person.GetPersonsByThirdNameLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Last Name":
                     dgvPersons.DataSource = Person.GetPersonsByLastNameLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Phone":
                     dgvPersons.DataSource = Person.GetPersonsByPhoneLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Email":
                     dgvPersons.DataSource = Person.GetPersonsByEmailLike(txtSearch.Text);
-                    SetNumberOfRecordsInDGV();
                     break;
-
             }
+            SetNumberOfRecordsInDGV();
 
 
         }
@@ -207,5 +207,14 @@ namespace DVLD
 
         }
 
+        private void inProgressToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not implemented yet");
+        }
+
+        private void emailPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not implemented yet");
+        }
     } 
 }

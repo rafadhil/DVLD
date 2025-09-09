@@ -101,7 +101,7 @@ namespace BusinessLayer
                 ref NationalityCountryID, ref ImagePath))
             {
                 enGender gender = Gender ? enGender.Female : enGender.Male;
-                return new Person(PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, gender, Address, Phone, Email, NationalityCountryID, ImagePath);
+                return new Person(Convert.ToInt32(PersonID), NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             }
             else
                 return null;

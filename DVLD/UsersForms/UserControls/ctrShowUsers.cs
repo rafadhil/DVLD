@@ -99,42 +99,43 @@ namespace DVLD
             {
                 case "None":
                     RefreshDGVUsers();
-                    break;
+                    return;
 
                 case "User ID":
-                    dgvUsers.DataSource = User.GetUsersByUserIDLike(Convert.ToInt32(txtSearch.Text));
-                    SetNumberOfRecordsInDGV();
+                    dgvUsers.DataSource = User.GetUsersByUserIDLike(txtSearch.Text);
                     break;
 
                 case "Username":
                     dgvUsers.DataSource = User.GetUsersByUsernameLike(txtSearch.Text.ToString());
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 case "Person ID":
-                    dgvUsers.DataSource = User.GetUsersByPersonIDLike(Convert.ToInt32(txtSearch.Text));
-                    SetNumberOfRecordsInDGV();
+                    if (int.TryParse(txtSearch.Text, out int personId))
+                    {
+                        dgvUsers.DataSource = User.GetUsersByPersonIDLike(personId);
+                    }
                     break;
 
                 case "Full Name":
                     dgvUsers.DataSource = User.GetUsersByFullNameLike(txtSearch.Text.ToString());
-                    SetNumberOfRecordsInDGV();
                     break;
 
                 default:
                     RefreshDGVUsers();
-                    break;
+                    return;
             }
+            SetNumberOfRecordsInDGV();
+
         }
 
         private void inProgressToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Dialing..");
+            MessageBox.Show("Not implemented yet");
         }
 
         private void emailPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sending email..");
+            MessageBox.Show("Not implemented yet");
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)

@@ -52,7 +52,8 @@ namespace BusinessLayer
 
         public static Application GetApplicationByID(int ApplicationID)
         {
-            int ApplicantID = -1, CreatedByUserID = -1, ApplicationTypeID = -1;
+            int ApplicantID = -1;
+            int CreatedByUserID = -1, ApplicationTypeID = -1;
             DateTime ApplicationDate = DateTime.MinValue;
             byte ApplicationStatus = 0;
             DateTime LastStatusDate = DateTime.MinValue;
