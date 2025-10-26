@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -33,7 +34,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -70,7 +71,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -113,7 +114,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -153,6 +154,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -195,6 +197,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -236,6 +239,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -280,6 +284,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -321,6 +326,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -362,6 +368,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally
@@ -405,6 +412,7 @@ namespace DataAccessLayer.Licenses
             }
             catch (Exception e)
             {
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
 
             }
             finally

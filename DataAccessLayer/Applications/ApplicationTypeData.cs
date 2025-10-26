@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -64,7 +65,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -102,7 +103,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {

@@ -1,10 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\",
+  "WorkspaceRootPath": "C:\\Users\\rayan\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|c:\\users\\rayan\\desktop\\dvld_stuff\\dvld\\dvld\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D05AB4A1-4176-4ED9-A232-8BFD3DCC0BA0}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C0862062-0C4B-453D-9620-56F18B2F70C1}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\rayan\\source\\repos\\businesslayer\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +22,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\FrmMain.cs",
-              "RelativeDocumentMoniker": "FrmMain.cs",
-              "ToolTip": "C:\\Users\\rayan\\Desktop\\DVLD_Stuff\\DVLD\\DVLD\\FrmMain.cs [Design]",
-              "RelativeToolTip": "FrmMain.cs [Design]",
+              "Title": "Hashing.cs",
+              "DocumentMoniker": "C:\\Users\\rayan\\source\\repos\\BusinessLayer\\Hashing.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Hashing.cs",
+              "ToolTip": "C:\\Users\\rayan\\source\\repos\\BusinessLayer\\Hashing.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Hashing.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T21:51:42.956Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-11T22:25:34.265Z",
+              "EditorCaption": ""
             }
           ]
         }

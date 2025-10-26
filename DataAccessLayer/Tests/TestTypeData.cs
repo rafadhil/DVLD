@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace DataAccessLayer
 {
@@ -32,7 +33,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -67,7 +68,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -108,7 +109,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {

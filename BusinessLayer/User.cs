@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,9 +15,19 @@ namespace BusinessLayer
         public int UserID { set; get; }
         public Person Person { set; get; }
         public String Username { set; get; }
-        public String Password { set; private get; }
+        private String _Password;
+        public String Password
+        {
+            set
+            {
+                _Password = Hashing.ComputeSha256Hash(value);
+            }
+            get { return _Password; }
+        }
         public bool IsActive { set; get; }
         private enMode Mode;
+
+        
 
         public User()
         {
@@ -38,11 +49,11 @@ namespace BusinessLayer
             this.Mode = enMode.Update;
         }
 
-        public bool ChangePassword(String CurrentPassword, String NewPassword)
+        public bool ChangePassword(String CurrentPasswordHash, String NewPasswordHash)
         {
-            if(ValidateLoginCredentials(this.Username, CurrentPassword))
+            if(ValidateLoginCredentials(this.Username, CurrentPasswordHash))
             {
-                return UserData.ChangePassword(this.UserID, NewPassword);
+                return UserData.ChangePassword(this.UserID, NewPasswordHash);
             }
             else
             {
@@ -54,9 +65,9 @@ namespace BusinessLayer
             return ValidateLoginCredentials(this.Username, this.Password);
         }
 
-        public static bool ValidateLoginCredentials(String Username, String Password)
+        public static bool ValidateLoginCredentials(String Username, String HashedPassword)
         {
-            return UserData.ValidateLoginCredentials(Username, Password);
+            return UserData.ValidateLoginCredentials(Username, HashedPassword);
         }
 
         public static DataTable GetAllUsers()

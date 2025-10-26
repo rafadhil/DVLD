@@ -82,21 +82,23 @@ namespace DVLD
                 return;
             }
 
-            if (!User.ValidateLoginCredentials(ActiveUser.Username, txtCurrentPassword.Text))
+            if (!User.ValidateLoginCredentials(ActiveUser.Username, Hashing.ComputeSha256Hash(txtCurrentPassword.Text)))
             {
                 MessageBox.Show("Incorrect Password");
                 return;
             }
 
 
-            if (ActiveUser.ChangePassword(txtCurrentPassword.Text, txtNewPassword.Text))
+            if (ActiveUser.ChangePassword(Hashing.ComputeSha256Hash(txtCurrentPassword.Text), Hashing.ComputeSha256Hash(txtNewPassword.Text)))
             {
                 MessageBox.Show("Password has been changed successfully");
+                btnSave.Enabled = false;
+                return;
             }
-            else
-            {
+            
+
                 MessageBox.Show("ERROR: Could not change password");
-            }
+            
             
             
         }
@@ -140,6 +142,16 @@ namespace DVLD
             {
                 errorProvider1.SetError(txtConfirmPassword, "");
             }
+        }
+
+        private void ctrDisplayPersonDetails1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCurrentPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

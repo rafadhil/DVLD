@@ -1,8 +1,10 @@
 ﻿using BusinessLayer;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -34,7 +36,10 @@ namespace DVLD
         private void FrmLoginScreen_Load(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;
-            UploadCredentials();
+            UploadCredentialsFromWindowsRegistry();
+
+
+
         }
 
         private void TriggerFocusToControls()
@@ -57,7 +62,7 @@ namespace DVLD
                 return;
             }
 
-            if(!User.ValidateLoginCredentials(txtUsername.Text, txtPassword.Text))
+            if(!User.ValidateLoginCredentials(txtUsername.Text, Hashing.ComputeSha256Hash(txtPassword.Text)))
             {
                 MessageBox.Show("Incorrect Username/Password");
                 return;
@@ -69,7 +74,7 @@ namespace DVLD
             }
             else
             {
-                EraseCredentials();
+                EraseCredentialsFromWindowsRegistry();
             }
 
             Login();
@@ -88,11 +93,12 @@ namespace DVLD
         }
         private void RememberCredentials()
         {
-            string filePath = @"C:\Users\rayan\source\repos\DVLD\RememberedLoginCredentials.txt";
+            string keyPath = @"HKEY_CURRENT_USER\Software\DVLD";
 
             try
             {
-                File.WriteAllText(filePath, $"{txtUsername.Text}\n{txtPassword.Text}");
+                Registry.SetValue(keyPath, "username", txtUsername.Text);
+                Registry.SetValue(keyPath, "password", txtPassword.Text);
             }
             catch (Exception ex)
             {
@@ -101,16 +107,14 @@ namespace DVLD
         }
 
 
-        private void EraseCredentials()
+        private void EraseCredentialsFromWindowsRegistry()
         {
-            string filePath = @"C:\Users\rayan\source\repos\DVLD\RememberedLoginCredentials.txt";
+            string keyPath = @"HKEY_CURRENT_USER\Software\DVLD";
 
             try
             {
-                if (File.Exists(filePath))
-                {
-                    File.WriteAllText(filePath, string.Empty);
-                }
+                Registry.SetValue(keyPath, "username", "");
+                Registry.SetValue(keyPath, "password", "");
             }
             catch (Exception ex)
             {
@@ -119,22 +123,23 @@ namespace DVLD
         }
 
 
-        private void UploadCredentials()
+        private void UploadCredentialsFromWindowsRegistry()
         {
-            string filePath = @"C:\Users\rayan\source\repos\DVLD\RememberedLoginCredentials.txt";
+            string keyPath = @"HKEY_CURRENT_USER\Software\DVLD";
 
             try
             {
-                if (File.Exists(filePath))
+                string username = Registry.GetValue(keyPath, "username", null) as string;
+                string password = Registry.GetValue(keyPath, "password", null) as string;
+
+                if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
-                    string[] lines = File.ReadAllLines(filePath);
-                    if (lines.Length >= 2)
-                    {
-                        txtUsername.Text = lines[0];
-                        txtPassword.Text = lines[1];
-                        cbRememberMe.Checked = true;
-                    }
+                    return;
                 }
+
+                txtUsername.Text = username;
+                txtPassword.Text = password;
+                cbRememberMe.Checked = true;
             }
             catch (Exception ex)
             {

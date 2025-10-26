@@ -387,7 +387,6 @@ namespace DVLD
 
        private bool IsValidEmail(String email)
         {
-            // Basic but practical email pattern
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, pattern);
         }

@@ -81,9 +81,6 @@ namespace BusinessLayer
             return PersonData.GetAllPersons();
         }
 
-        //ctrl + k + c => comment out selected lines
-        //ctrl + k + u => uncomment out selected lines
-
         public static DataTable GetPersonsByPersonIDLike(int PersonID)
         {
 

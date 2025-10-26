@@ -162,6 +162,7 @@
             this.txtCurrentPassword.Name = "txtCurrentPassword";
             this.txtCurrentPassword.Size = new System.Drawing.Size(175, 20);
             this.txtCurrentPassword.TabIndex = 38;
+            this.txtCurrentPassword.TextChanged += new System.EventHandler(this.txtCurrentPassword_TextChanged);
             this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             // 
             // txtNewPassword
@@ -219,6 +220,7 @@
             this.ctrDisplayPersonDetails1.Name = "ctrDisplayPersonDetails1";
             this.ctrDisplayPersonDetails1.Size = new System.Drawing.Size(797, 307);
             this.ctrDisplayPersonDetails1.TabIndex = 0;
+            this.ctrDisplayPersonDetails1.Load += new System.EventHandler(this.ctrDisplayPersonDetails1_Load);
             // 
             // FrmChangeUserPassword
             // 

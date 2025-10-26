@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -71,7 +72,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -126,7 +127,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                return -1;
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -159,7 +160,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -190,7 +191,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -240,7 +241,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -290,7 +291,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -325,7 +326,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -355,7 +356,8 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
+
             }
             finally
             {
@@ -385,7 +387,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                EventLog.WriteEntry(DataLayerSettings.EventViewerSourceName, e.Message, EventLogEntryType.Error);
             }
             finally
             {
