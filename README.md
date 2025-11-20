@@ -18,7 +18,7 @@ This project is a complete implementation of the "Project 1" requirements for a 
 - **License Detainment & Release**: Manages the detainment and release of licenses.
 
 ### System Management
-- **People Management**: Add, edit, delete, and search for individuals using their National Number.
+- **People Management**: Add, edit, delete, and search for individuals using various filters such as National Number, ID, Name, etc..
 - **Users Management**: Manage system users, link them to people.
 - **Applications Management**: Track and filter all service applications by status, applicant, etc.
 - **License Classes Management**: Configure license categories, fees, validity, and age requirements.
