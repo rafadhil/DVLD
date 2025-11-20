@@ -93,6 +93,7 @@ All new license applications require three sequential tests:
 1. **Vision Test** - $10 fee
 2. **Written Test** - $20 fee  
 3. **Practical Test** - $30 fee
+
 The information of these tests can be modified within the application
 
 
